@@ -125,6 +125,45 @@ footer{background:#090e14}
  background-repeat:no-repeat;
 }
 
+
+/* Final feature artwork pass: one known, named image per card; no stacked/placeholder backgrounds. */
+.card .ico{
+  display:block;
+  width:100%;
+  height:160px;
+  margin:0;
+  clip-path:none;
+  font-size:0;
+  background-color:#142b38;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:cover;
+}
+.card:nth-child(1) .ico{
+  background-image:linear-gradient(0deg,#0d17213d,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/BW%20PS%20Bianca%20Cheren.png");
+  background-position:center 38%;
+}
+.card:nth-child(2) .ico{
+  background-image:linear-gradient(0deg,#0d17213d,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/Bianca%20and%20friends.png");
+  background-position:center 40%;
+}
+.card:nth-child(3) .ico{
+  background-image:linear-gradient(0deg,#0d17213d,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/BW%20Wild%20Double%20Battle.png");
+  background-position:center 50%;
+}
+.card:nth-child(4) .ico{
+  background-image:linear-gradient(0deg,#0d17213d,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/Looker%20BW%20anime.png");
+  background-position:center 40%;
+}
+.card:nth-child(5) .ico{
+  background-image:linear-gradient(0deg,#0d17213d,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/Cheren%20and%20Serperior%20PBW.png");
+  background-position:center 38%;
+}
+.card:nth-child(6) .ico{
+  background-image:linear-gradient(0deg,#0d17213d,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/BW%20PGL%20artwork.png");
+  background-position:center 42%;
+}
+
 </style></head>
 <body><div class="topline"></div><header><div class="wrap nav"><a class="brand" href="#top"><span class="mark"></span>CASTELIA <span style="color:var(--red)">ONLINE</span></a><button class="menu" id="menu">☰</button><nav id="nav"><a href="#world">The world</a><a href="#features">Features</a><a href="#cgear">C-Gear</a><a href="#start">Getting started</a><a class="cta" href="#community">Join the community ↗</a></nav></div></header>
 <main id="top"><section class="hero"><div class="wrap"><div class="hero-inner"><div class="eyebrow">A fan-made Unova online experience</div><h1>BACK TO<br><span class="outline">UNOVA.</span><br><span class="red">ONLINE.</span></h1><p>Meet up with other trainers, trade Pokémon, and battle across Unova. Castelia is a good place to start.</p><div class="actions"><a class="btn btn-red" href="#start">Explore the playtest ↗</a><a class="btn btn-outline" href="#features">Discover what's inside ＋</a></div></div></div><div class="stamp"><div><strong>WELCOME<br>TO UNOVA</strong><small>EST. IN THE CITY</small></div></div></section>
