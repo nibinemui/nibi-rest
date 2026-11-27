@@ -56,6 +56,35 @@ section{scroll-margin-top:74px}
 footer{background:#090e14}
 @media(max-width:800px){nav{background:#101923}}
 
+
+/* Real Black/White game captures and map art */
+.hero{background-image:linear-gradient(90deg,rgba(10,16,24,.96) 0%,rgba(10,16,24,.84) 42%,rgba(10,16,24,.28) 100%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/Castelia_City_Oceanfront_Road_BW.png");background-size:cover;background-position:center 48%}
+.hero:before{background-image:linear-gradient(#d9f4ff08 1px,transparent 1px),linear-gradient(90deg,#d9f4ff08 1px,transparent 1px)}
+.city{height:360px;padding:0;position:relative;background:#101923 url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/Castelia_City_Castelia_Street_BW.png") center 48%/cover no-repeat;border:1px solid #557785;overflow:hidden}
+.city:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,15,22,.88),rgba(8,15,22,.05) 68%)}
+.city-label{position:absolute;z-index:2;top:18px;left:20px;padding:8px 10px;background:#101923d9;color:#d8edf0}
+.city-art{display:none}
+.city-caption{z-index:2;bottom:20px;left:22px;color:#fff;text-shadow:0 2px 10px #000;font-size:34px}
+.cards{gap:12px;background:transparent;border:0}
+.card{position:relative;overflow:hidden;padding:0;min-height:310px;background:#202c38;border:1px solid #344957}
+.card .number{position:absolute;z-index:2;top:14px;left:16px;padding:6px 9px;background:#101923df;color:#d8edf0}
+.card .ico{width:100%;height:160px;margin:0;clip-path:none;background-position:center;background-size:cover;background-repeat:no-repeat;font-size:0}
+.card h3,.card p{margin-left:20px;margin-right:20px}
+.card h3{margin-top:18px}
+.card p{margin-bottom:22px}
+.card:nth-child(1) .ico{background-image:linear-gradient(0deg,#0d1721aa,#0d172100 55%),url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/571.gif")}
+.card:nth-child(2) .ico{background-image:linear-gradient(0deg,#0d1721aa,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/BW_summary_1.png")}
+.card:nth-child(3) .ico{background-image:linear-gradient(0deg,#0d1721aa,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/BW_Wild_Double_Battle.png")}
+.card:nth-child(4) .ico{background-image:linear-gradient(0deg,#0d1721aa,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/Gen_V_Dowsing_Machine.png")}
+.card:nth-child(5) .ico{background-image:linear-gradient(0deg,#0d1721aa,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/BW_Unova_Diploma.png")}
+.card:nth-child(6) .ico{background-image:linear-gradient(0deg,#0d1721aa,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/CGear_Online.png")}
+.gear{background:url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/CGear_Online.png") center/contain no-repeat}
+.gear .ring,.gear .core,.gear .node{display:none}
+.news-art{background:linear-gradient(0deg,#0b1420aa,#0b142033),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/Castelia_City_Map_BW.png") center/contain no-repeat,#172b38}
+.news-art:before{display:none}
+.news-art b{background:#0d1823d9;padding:10px 20px;color:#f3f6f7}
+@media(max-width:800px){.gear{min-height:280px}}
+
 </style></head>
 <body><div class="topline"></div><header><div class="wrap nav"><a class="brand" href="#top"><span class="mark"></span>CASTELIA <span style="color:var(--red)">ONLINE</span></a><button class="menu" id="menu">☰</button><nav id="nav"><a href="#world">The world</a><a href="#features">Features</a><a href="#cgear">C-Gear</a><a href="#start">Getting started</a><a class="cta" href="#community">Join the community ↗</a></nav></div></header>
 <main id="top"><section class="hero"><div class="wrap"><div class="hero-inner"><div class="eyebrow">A fan-made Unova online experience</div><h1>BACK TO<br><span class="outline">UNOVA.</span><br><span class="red">ONLINE.</span></h1><p>Meet up with other trainers, trade Pokémon, and battle across Unova. Castelia is a good place to start.</p><div class="actions"><a class="btn btn-red" href="#start">Explore the playtest ↗</a><a class="btn btn-outline" href="#features">Discover what's inside ＋</a></div></div></div><div class="stamp"><div><strong>WELCOME<br>TO UNOVA</strong><small>EST. IN THE CITY</small></div></div></section>
