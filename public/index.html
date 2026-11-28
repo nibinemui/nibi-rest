@@ -92,6 +92,7 @@ h1 .red{color:var(--red)}
 .card p{font-size:13px;color:var(--muted);line-height:1.75;margin:0}
 .card.social{--accent:var(--blue)}.card.trade{--accent:var(--green)}.card.battle{--accent:var(--purple)}
 .card.missions{--accent:var(--amber)}.card.looks{--accent:var(--red)}.card.connect{--accent:var(--teal)}
+.card.cards{--accent:#f2d24b}.card.join{--accent:#4fd6b4}
 
 /* ---- C-Gear */
 .cgear{background:var(--bg);overflow:hidden}
@@ -125,6 +126,20 @@ h1 .red{color:var(--red)}
 .note-copy h3{font-size:28px;margin:11px 0}
 .note-copy p{color:var(--muted);font-size:13px;line-height:1.75;margin:0}
 
+/* ---- FAQ */
+.faq{background:var(--bg-2)}
+.faqgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}
+.faqlist{border-top:1px solid var(--line)}
+.faqlist details{border-bottom:1px solid var(--line)}
+.faqlist summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:19px 2px;font:800 21px var(--head);text-transform:uppercase;letter-spacing:.03em}
+.faqlist summary::-webkit-details-marker{display:none}
+.faqlist summary:after{content:"+";flex:none;width:28px;height:28px;display:grid;place-items:center;border:1px solid var(--line);color:var(--teal);font:700 18px var(--body);transition:transform .2s}
+.faqlist details[open] summary:after{transform:rotate(45deg);border-color:var(--teal)}
+.faqlist summary:hover{color:#fff}
+.faqlist summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.faqlist details p{margin:0 0 20px;color:var(--muted);font-size:14px;line-height:1.8;max-width:640px}
+.faqlist a,.notice a,.faq .lead a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+
 /* ---- Community */
 .community{text-align:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 0%,#16475a 0%,#101a24 58%,#0d141c 100%)}
 .community:before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:650px;height:650px;border:1px solid #79d5e51b;border-radius:50%;box-shadow:0 0 0 50px #79d5e508,0 0 0 110px #79d5e505}
@@ -145,7 +160,7 @@ footer{padding:28px 0;background:#090e14;border-top:1px solid var(--line-soft);c
   nav{display:none;position:absolute;top:74px;left:0;right:0;background:#0f1922;padding:22px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line-soft)}
   nav.open{display:flex}
   .menu{display:block}
-  .hero-grid,.two,.geargrid{grid-template-columns:1fr;gap:38px}
+  .hero-grid,.two,.geargrid,.faqgrid{grid-template-columns:1fr;gap:38px}
   .hero-grid{min-height:0;padding:60px 0 70px}
   .hero .screen{transform:none;max-width:520px}
   .cgear .screen{max-width:440px}
@@ -176,7 +191,8 @@ footer{padding:28px 0;background:#090e14;border-top:1px solid var(--line-soft);c
       <a href="#features">Features</a>
       <a href="#cgear">C-Gear</a>
       <a href="#start">Getting started</a>
-      <a class="cta" href="#community">Join the community ↗</a>
+      <a href="#faq">FAQ</a>
+      <a class="cta" href="https://discord.gg/c7cvrsWD9a" target="_blank" rel="noopener">Join the Discord ↗</a>
     </nav>
   </div>
 </header>
@@ -210,7 +226,7 @@ footer{padding:28px 0;background:#090e14;border-top:1px solid var(--line-soft);c
       <p class="lead">Unova Online runs inside Pokémon Black and White. Other players walk the same routes and towns as you, with their names above their heads.</p>
       <ul class="facts">
         <li><strong>Together</strong>Black and White players share one world.</li>
-        <li><strong>Copies</strong>Unova is split into copies of up to 20 trainers each. Switch any time from the C-Gear.</li>
+        <li><strong>Copies</strong>Unova is split into copies of up to 20 trainers each. Switch any time from the C-Gear, or join a friend in theirs.</li>
         <li><strong>Fresh start</strong>Every new account begins a brand-new adventure.</li>
       </ul>
     </div>
@@ -228,7 +244,7 @@ footer{padding:28px 0;background:#090e14;border-top:1px solid var(--line-soft);c
     <p class="lead">Everything happens in the game itself. These are real screenshots from the playtest.</p>
     <div class="cards">
       <article class="card social">
-        <div class="art"><span class="number">Social</span><img src="images/social.png" width="1560" height="576" alt="Trainers with name tags in town, and the C-Gear chat with messages from other players" loading="lazy"></div>
+        <div class="art"><span class="number">Social</span><img src="images/social.png" width="1560" height="576" alt="A crowd of trainers with name tags in Accumula Town, and the C-Gear chat with messages from other players" loading="lazy"></div>
         <div class="body"><h3>Find your people</h3><p>See other trainers as you explore. Chat with everyone online from the C-Gear, or walk up and talk to a player to trade or battle.</p></div>
       </article>
       <article class="card trade">
@@ -251,6 +267,14 @@ footer{padding:28px 0;background:#090e14;border-top:1px solid var(--line-soft);c
         <div class="art"><span class="number">Community</span><img src="images/shiny-announcement.png" width="1560" height="576" alt="A shiny Golbat in a wild battle, and the C-Gear announcing that a player caught a shiny Golbat" loading="lazy"></div>
         <div class="body"><h3>Stay connected</h3><p>Shiny catches are announced to everyone. News, events and Mystery Gifts arrive through the C-Gear and the game's own Mystery Gift.</p></div>
       </article>
+      <article class="card cards">
+        <div class="art"><span class="number">Trainer cards</span><img src="images/trainer-card.png" width="1560" height="576" alt="A C-Gear trainer card with eight badges, Pokédex and play time, next to the Awards list" loading="lazy"></div>
+        <div class="body"><h3>Show what you've done</h3><p>Every trainer has a card with badges, Pokédex, play time, battles, trades and shinies, and 18 awards to earn. Tap any player to see theirs.</p></div>
+      </article>
+      <article class="card join">
+        <div class="art"><span class="number">Join friend</span><img src="images/join-friend.png" width="1560" height="576" alt="A friend's C-Gear profile with the Join button, and the player arriving next to that friend in their copy of Unova" loading="lazy"></div>
+        <div class="body"><h3>Join your friends</h3><p>Friend in another copy of Unova? Tap Join on their profile. You warp out and land on the same spot in their copy, right in the game.</p></div>
+      </article>
     </div>
   </div>
 </section>
@@ -265,7 +289,7 @@ footer{padding:28px 0;background:#090e14;border-top:1px solid var(--line-soft);c
       <h2>The C-Gear gets a new job.</h2>
       <p>The touch screen is home base. Its three circles are your shortcuts, and the latest chat and news sit right underneath.</p>
       <div class="gear-list">
-        <div class="gear-item"><i class="dot" style="color:var(--blue);background:var(--blue)"></i><div><strong>Social</strong><small>Chat, friends, and the copies of Unova to switch between.</small></div></div>
+        <div class="gear-item"><i class="dot" style="color:var(--blue);background:var(--blue)"></i><div><strong>Social</strong><small>Chat, friends, trainer cards, and the copies of Unova to switch between.</small></div></div>
         <div class="gear-item"><i class="dot" style="color:var(--purple);background:var(--purple)"></i><div><strong>Battle</strong><small>Challenge trainers online and set up link battles.</small></div></div>
         <div class="gear-item"><i class="dot" style="color:var(--green);background:var(--green)"></i><div><strong>Trade</strong><small>The GTS, the Items board and the Looks shop.</small></div></div>
       </div>
@@ -283,7 +307,7 @@ footer{padding:28px 0;background:#090e14;border-top:1px solid var(--line-soft);c
       <article class="step"><div class="step-num">02</div><h3>Open the client</h3><p>Unzip the Unova Online playtest on a 64-bit Windows 10 or 11 PC, start it, and pick your game.</p></article>
       <article class="step"><div class="step-num">03</div><h3>Step into Unova</h3><p>Choose a trainer name and connect. Your adventure starts fresh, and the server keeps your save safe.</p></article>
     </div>
-    <div class="notice"><strong>Playtest note:</strong> This is an early build and things will change. The game only runs while connected, and cheats and save states are turned off. The download link goes here when the playtest opens.</div>
+    <div class="notice"><strong>Playtest note:</strong> This is an early build and things will change. The game only runs while connected, and cheats and save states are turned off. The download link goes here when the playtest opens. <a href="https://discord.gg/c7cvrsWD9a" target="_blank" rel="noopener">Join the Discord</a> to hear first.</div>
   </div>
 </section>
 
@@ -305,14 +329,62 @@ footer{padding:28px 0;background:#090e14;border-top:1px solid var(--line-soft);c
   </div>
 </section>
 
+<section class="faq" id="faq">
+  <div class="wrap faqgrid">
+    <div>
+      <div class="kicker">Before you ask</div>
+      <h2 class="title">Questions, answered.</h2>
+      <p class="lead">Something not covered here? Ask in the <a href="https://discord.gg/c7cvrsWD9a" target="_blank" rel="noopener">Discord</a>.</p>
+    </div>
+    <div class="faqlist">
+      <details>
+        <summary>What is Unova Online?</summary>
+        <p>A fan-made multiplayer layer for Pokémon Black and White. The games run as they always have, in a client built on the melonDS emulator, and our server adds the other players: name tags, chat, trading, link battles, missions and more, all inside the game.</p>
+      </details>
+      <details>
+        <summary>Do I need my own copy of the game?</summary>
+        <p>Yes. Unova Online needs your own Pokémon Black or Pokémon White (US). The game is not included, and we can't share it.</p>
+      </details>
+      <details>
+        <summary>Can Black and White players play together?</summary>
+        <p>Yes. Both games share one world. You'll see players from either version, and you can trade and battle with them.</p>
+      </details>
+      <details>
+        <summary>What happens to my save?</summary>
+        <p>Every new account starts a brand-new adventure. Each time you save in the game, a copy goes to the server, so your progress is kept safe and follows your account.</p>
+      </details>
+      <details>
+        <summary>Can I play offline, or use cheats and save states?</summary>
+        <p>No. The game only runs while connected, and cheats and save states are turned off, so trades, battles and rankings stay fair for everyone.</p>
+      </details>
+      <details>
+        <summary>How many people can play at once?</summary>
+        <p>Unova is split into copies of up to 20 trainers each, so towns stay lively without getting crowded. Switch copies from the C-Gear, or tap Join on a friend's profile to land in theirs.</p>
+      </details>
+      <details>
+        <summary>What are Castelia Coins?</summary>
+        <p>The online currency. You earn them by playing, battling, trading and finishing missions, and spend them on trainer looks and on the Items board.</p>
+      </details>
+      <details>
+        <summary>What do I need to run it?</summary>
+        <p>For the playtest: a 64-bit Windows 10 or 11 PC and an internet connection.</p>
+      </details>
+      <details>
+        <summary>When can I play?</summary>
+        <p>The first playtest build is ready, and the download goes up on this page when the playtest opens. <a href="https://discord.gg/c7cvrsWD9a" target="_blank" rel="noopener">Join the Discord</a> to hear the moment it does.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section class="community" id="community">
   <div class="wrap">
     <div class="eyebrow">Come hang out in Unova</div>
     <h2>Unova is better<br>when we're <span style="color:var(--red)">together.</span></h2>
-    <p>Follow along with development, and be there when the playtest opens.</p>
+    <p>Development news and playtest updates land in the Discord first. Come say hi, and find trainers to trade and battle with.</p>
     <div class="actions">
-      <a class="btn btn-red" href="mailto:hello@nibi.rest?subject=Unova%20Online">Get in touch ↗</a>
-      <a class="btn btn-outline" href="#top">Back to top ↑</a>
+      <a class="btn btn-red" href="https://discord.gg/c7cvrsWD9a" target="_blank" rel="noopener">Join the Discord ↗</a>
+      <a class="btn btn-outline" href="mailto:hello@nibi.rest?subject=Unova%20Online">Get in touch ✉</a>
     </div>
   </div>
 </section>
