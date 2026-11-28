@@ -106,14 +106,6 @@ h1 .red{color:var(--red)}
 .gear-item strong{font:800 19px var(--head);text-transform:uppercase}
 .gear-item small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
 
-/* ---- Getting started */
-.steps{background:#121b25}
-.stepgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
-.step{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--amber);padding:22px}
-.step-num{font:900 42px var(--head);color:var(--red)}
-.step h3{font-size:26px;margin:10px 0}
-.step p{font-size:13px;line-height:1.75;color:var(--muted);margin:0}
-.notice{margin-top:22px;padding:17px 20px;background:#16303d;border-left:4px solid var(--teal);font-size:13px;color:#d3e4e9;line-height:1.75}
 
 /* ---- Field notes */
 .news{background:#141e29}
@@ -138,7 +130,7 @@ h1 .red{color:var(--red)}
 .faqlist summary:hover{color:#fff}
 .faqlist summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
 .faqlist details p{margin:0 0 20px;color:var(--muted);font-size:14px;line-height:1.8;max-width:640px}
-.faqlist a,.notice a,.faq .lead a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.faqlist a,.faq .lead a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
 
 /* ---- Community */
 .community{text-align:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 0%,#16475a 0%,#101a24 58%,#0d141c 100%)}
@@ -164,7 +156,7 @@ footer{padding:28px 0;background:#090e14;border-top:1px solid var(--line-soft);c
   .hero-grid{min-height:0;padding:60px 0 70px}
   .hero .screen{transform:none;max-width:520px}
   .cgear .screen{max-width:440px}
-  .stepgrid,.newsgrid{grid-template-columns:1fr}
+  .newsgrid{grid-template-columns:1fr}
   section{padding:72px 0}
 }
 @media(max-width:560px){
@@ -190,7 +182,6 @@ footer{padding:28px 0;background:#090e14;border-top:1px solid var(--line-soft);c
       <a href="#world">The world</a>
       <a href="#features">Features</a>
       <a href="#cgear">C-Gear</a>
-      <a href="#start">Getting started</a>
       <a href="#faq">FAQ</a>
       <a class="cta" href="https://discord.gg/c7cvrsWD9a" target="_blank" rel="noopener">Join the Discord ↗</a>
     </nav>
@@ -205,7 +196,7 @@ footer{padding:28px 0;background:#090e14;border-top:1px solid var(--line-soft);c
       <h1>Back to<br><span class="outline">Unova.</span><br><span class="red">Online.</span></h1>
       <p>Walk Unova with other trainers in it. See everyone around you, chat from the C-Gear, trade, battle, and work through missions together, in the games you already love.</p>
       <div class="actions">
-        <a class="btn btn-red" href="#start">Join the playtest ↗</a>
+        <a class="btn btn-red" href="https://discord.gg/c7cvrsWD9a" target="_blank" rel="noopener">Join the Discord ↗</a>
         <a class="btn btn-outline" href="#features">See what's inside ＋</a>
       </div>
     </div>
@@ -241,7 +232,7 @@ footer{padding:28px 0;background:#090e14;border-top:1px solid var(--line-soft);c
   <div class="wrap">
     <div class="kicker">Make your mark</div>
     <h2 class="title">More than a journey.</h2>
-    <p class="lead">Everything happens in the game itself. These are real screenshots from the playtest.</p>
+    <p class="lead">Everything happens in the game itself. These are real screenshots from the game.</p>
     <div class="cards">
       <article class="card social">
         <div class="art"><span class="number">Social</span><img src="images/social.png?v=2" width="1560" height="576" alt="A crowd of trainers with name tags in Accumula Town, and the C-Gear chat with messages from other players" loading="lazy"></div>
@@ -297,19 +288,6 @@ footer{padding:28px 0;background:#090e14;border-top:1px solid var(--line-soft);c
   </div>
 </section>
 
-<section class="steps" id="start">
-  <div class="wrap">
-    <div class="kicker">Ready, trainer?</div>
-    <h2 class="title">Getting into the playtest.</h2>
-    <p class="lead">The playtest runs on Windows. You need your own copy of Pokémon Black or White.</p>
-    <div class="stepgrid">
-      <article class="step"><div class="step-num">01</div><h3>Prepare your game</h3><p>Have your own Pokémon Black or Pokémon White (US) game ready. The game itself is not included.</p></article>
-      <article class="step"><div class="step-num">02</div><h3>Open the client</h3><p>Unzip the Unova Online playtest on a 64-bit Windows 10 or 11 PC, start it, and pick your game.</p></article>
-      <article class="step"><div class="step-num">03</div><h3>Step into Unova</h3><p>Choose a trainer name and connect. Your adventure starts fresh, and the server keeps your save safe.</p></article>
-    </div>
-    <div class="notice"><strong>Playtest note:</strong> This is an early build and things will change. The game only runs while connected, and cheats and save states are turned off. The download link goes here when the playtest opens. <a href="https://discord.gg/c7cvrsWD9a" target="_blank" rel="noopener">Join the Discord</a> to hear first.</div>
-  </div>
-</section>
 
 <section class="news">
   <div class="wrap">
@@ -323,7 +301,7 @@ footer{padding:28px 0;background:#090e14;border-top:1px solid var(--line-soft);c
       </article>
       <article class="note">
         <div class="badge"><img src="images/unova-online-logo.png" width="96" height="96" alt=""></div>
-        <div class="note-copy"><div class="tag">PLAYTEST / NOVEMBER 2026</div><h3>Playtest v1 is built</h3><p>The first playtest build is ready: one download, your own game, and everyone starts a new adventure together.</p></div>
+        <div class="note-copy"><div class="tag">UPDATE / NOVEMBER 2026</div><h3>Trainer cards and Join friend</h3><p>Every trainer now has a card with badges, Pokédex and 18 awards to earn. Tap Join on a friend's profile to warp into their copy of Unova. The C-Gear got a new look, too.</p></div>
       </article>
     </div>
   </div>
@@ -367,11 +345,11 @@ footer{padding:28px 0;background:#090e14;border-top:1px solid var(--line-soft);c
       </details>
       <details>
         <summary>What do I need to run it?</summary>
-        <p>For the playtest: a 64-bit Windows 10 or 11 PC and an internet connection.</p>
+        <p>A 64-bit Windows 10 or 11 PC and an internet connection.</p>
       </details>
       <details>
         <summary>When can I play?</summary>
-        <p>The first playtest build is ready, and the download goes up on this page when the playtest opens. <a href="https://discord.gg/c7cvrsWD9a" target="_blank" rel="noopener">Join the Discord</a> to hear the moment it does.</p>
+        <p>There's no public release yet. <a href="https://discord.gg/c7cvrsWD9a" target="_blank" rel="noopener">Join the Discord</a> to follow development and hear about it first.</p>
       </details>
     </div>
   </div>
@@ -381,7 +359,7 @@ footer{padding:28px 0;background:#090e14;border-top:1px solid var(--line-soft);c
   <div class="wrap">
     <div class="eyebrow">Come hang out in Unova</div>
     <h2>Unova is better<br>when we're <span style="color:var(--red)">together.</span></h2>
-    <p>Development news and playtest updates land in the Discord first. Come say hi, and find trainers to trade and battle with.</p>
+    <p>Development news lands in the Discord first. Come say hi, and find trainers to trade and battle with.</p>
     <div class="actions">
       <a class="btn btn-red" href="https://discord.gg/c7cvrsWD9a" target="_blank" rel="noopener">Join the Discord ↗</a>
       <a class="btn btn-outline" href="mailto:hello@nibi.rest?subject=Unova%20Online">Get in touch ✉</a>
