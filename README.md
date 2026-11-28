@@ -1,6 +1,6 @@
 ﻿# Unova Online website
 
-The website for Unova Online, the online layer for Pokémon Black and White. It is a single static page (`index.html`) served by a tiny Node server (`server.js`) with no dependencies.
+The website for Unova Online, the online layer for Pokémon Black and White. It is a single static page in `public/` (`index.html` and `images/`). `server.js` is only for previewing it locally.
 
 ## Run it locally
 
@@ -8,12 +8,11 @@ Requires Node.js 20 or newer. Run `npm start` and open http://localhost:3000.
 
 ## Hosting
 
-- Railway: the Node buildpack runs `npm start`; the server listens on Railway's `PORT`.
-- Domain: `unovaonline.nibi.rest`. Add it as a custom domain on the Railway service, then add the CNAME record Railway shows in Cloudflare DNS for `nibi.rest`.
+Cloudflare Pages, connected to this repo's `unova-online` branch: no build command, build output directory `public`. Every push to the branch deploys. The custom domain `unovaonline.nibi.rest` is added on the Pages project (nibi.rest's DNS is on Cloudflare, so the record is made automatically). `public/_headers` sets security headers and caches images for a day.
 
 ## Images
 
-All artwork lives in `images/`. The screenshots are taken from Unova Online running the original games, scaled up with nearest-neighbour so the pixels stay sharp (the page also sets `image-rendering: pixelated`).
+All artwork lives in `public/images/`. The screenshots are taken from Unova Online running the original games, scaled up with nearest-neighbour so the pixels stay sharp (the page also sets `image-rendering: pixelated`).
 
 | File | What it shows |
 | --- | --- |
