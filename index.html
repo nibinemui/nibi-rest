@@ -1,184 +1,333 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101820"><meta name="description" content="Castelia Online — a Pokémon Black and White-inspired online adventure in Unova."><title>Castelia Online — Your Unova, Connected</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0d141c">
+<meta name="description" content="Unova Online: Pokémon Black and White, online. See other trainers in Unova, chat, trade, battle, and take on missions from the C-Gear.">
+<title>Unova Online — Back to Unova, online</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
-:root{--ink:#101820;--paper:#f1f3f2;--red:#e84149;--blue:#2386c8;--lime:#d8f36a;--line:rgba(255,255,255,.15)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:white;font-family:Inter,system-ui,sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1160px,calc(100% - 48px));margin:auto}.topline{height:5px;background:linear-gradient(90deg,var(--red) 0 50%,var(--blue) 50%)}header{position:sticky;top:0;z-index:9;background:#101820ed;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{height:74px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:13px;font:900 23px 'Barlow Condensed';letter-spacing:.09em}.mark{width:30px;height:30px;border:3px solid white;transform:rotate(45deg);display:grid;place-items:center}.mark:after{content:"";width:10px;height:10px;border-radius:50%;background:var(--red)}nav{display:flex;gap:27px;align-items:center;font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#c5cdd2}nav a:hover{color:white}.cta{background:var(--red);padding:13px 18px;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);color:white}.menu{display:none;background:none;border:0;color:white;font-size:25px}
-.hero{min-height:660px;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 82% 44%,#2386c833,transparent 34%),linear-gradient(120deg,#101820,#172a36 75%,#10283b)}.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff09 1px,transparent 1px),linear-gradient(90deg,#ffffff09 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(90deg,black,transparent)}.hero:after{content:"";position:absolute;right:-8%;top:8%;width:min(55vw,700px);aspect-ratio:1;border:1px solid #ffffff20;border-radius:50%;box-shadow:0 0 0 38px #ffffff08,0 0 0 90px #ffffff05,0 0 0 150px #ffffff04}.hero-inner{position:relative;z-index:1;padding:90px 0 105px;max-width:700px}.eyebrow{color:var(--lime);font-size:10px;font-weight:900;letter-spacing:.23em;text-transform:uppercase;display:flex;align-items:center;gap:12px}.eyebrow:before{content:"";width:34px;height:2px;background:var(--lime)}h1,h2,h3{font-family:'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;line-height:.94;margin:0}h1{font-size:clamp(65px,10vw,118px);margin:25px 0 20px;letter-spacing:.01em}h1 .outline{color:transparent;-webkit-text-stroke:1.5px #ffffffc9}h1 .red{color:var(--red)}.hero p{max-width:520px;color:#c0cbd2;line-height:1.85;font-size:15px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}.btn{display:inline-flex;align-items:center;gap:12px;padding:16px 21px;font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px);transition:.2s}.btn:hover{transform:translateY(-3px)}.btn-red{background:var(--red)}.btn-outline{border:1px solid #ffffff66}.stamp{position:absolute;right:8%;bottom:12%;z-index:2;width:175px;height:175px;border:1px solid #ffffff66;border-radius:50%;display:grid;place-items:center;text-align:center;transform:rotate(-12deg)}.stamp:before,.stamp:after{content:"";position:absolute;inset:10px;border:1px dashed #ffffff66;border-radius:50%}.stamp:after{inset:24px}.stamp strong{font:800 21px 'Barlow Condensed';letter-spacing:.1em}.stamp small{display:block;color:var(--lime);font-size:8px;letter-spacing:.2em;margin-top:8px}
-.ticker{padding:13px 0;background:var(--lime);color:var(--ink);font:900 13px 'Barlow Condensed';letter-spacing:.17em;white-space:nowrap;overflow:hidden}.ticker b{color:var(--red);padding:0 22px;font-size:18px}
-section{padding:96px 0}.kicker{font-size:10px;color:var(--red);font-weight:900;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px}.title{font-size:clamp(42px,6vw,67px);margin-bottom:17px}.lead{color:#aeb9c1;font-size:14px;line-height:1.85;max-width:590px}.two{display:grid;grid-template-columns:1.1fr .9fr;gap:65px;align-items:center}.city{height:330px;position:relative;overflow:hidden;background:linear-gradient(145deg,#dce5e7,#aebfc5);color:#101820;padding:24px;clip-path:polygon(0 0,calc(100% - 25px) 0,100% 25px,100% 100%,25px 100%,0 calc(100% - 25px))}.city-label{font:800 11px 'Barlow Condensed';letter-spacing:.17em}.city-art{position:absolute;inset:50px 0 0;background:repeating-linear-gradient(90deg,transparent 0 35px,#1018200c 36px 38px)}.sun{position:absolute;right:12%;top:8%;width:70px;height:70px;background:var(--red);border-radius:50%}.tower{position:absolute;bottom:0;background:#f4f5f2;border:2px solid #6d828a;width:17%}.tower:after{content:"";position:absolute;inset:12px 8px;background:repeating-linear-gradient(180deg,#6d9eb1 0 5px,transparent 5px 18px)}.t1{height:55%;left:8%}.t2{height:80%;left:30%;width:19%}.t3{height:64%;left:56%;width:14%}.t4{height:45%;left:77%}.city-caption{position:absolute;bottom:18px;left:23px;font:800 28px 'Barlow Condensed'}
-.features,.news{background:var(--paper);color:var(--ink)}.features .lead,.news .lead{color:#52616a}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:44px;background:#cdd4d4;border:2px solid #cdd4d4}.card{background:white;padding:28px;min-height:245px;transition:.2s}.card:hover{background:#f7faf9;transform:translateY(-4px)}.number{font:800 12px 'Barlow Condensed';color:#87949b;letter-spacing:.15em}.ico{width:50px;height:50px;margin:25px 0 17px;background:#e8eef0;display:grid;place-items:center;font-size:24px;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px)}.card:nth-child(2) .ico{background:#fbe6e6}.card:nth-child(3) .ico{background:#e2eff8}.card h3{font-size:27px;margin-bottom:10px}.card p{font-size:12px;color:#65727a;line-height:1.8;margin:0}
-.cgear{background:#111b24;overflow:hidden}.geargrid{display:grid;grid-template-columns:.95fr 1.05fr;gap:65px;align-items:center}.gear{height:370px;position:relative;display:grid;place-items:center}.ring{width:285px;height:285px;border:2px solid #ffffff38;border-radius:50%;box-shadow:0 0 0 18px #ffffff08,0 0 0 55px #ffffff05}.core{position:absolute;width:135px;height:135px;border:8px solid #e9eeee;border-radius:50%;background:linear-gradient(135deg,#e94a51 0 49%,#202b34 50%);box-shadow:0 14px 45px #0008}.node{position:absolute;width:82px;height:82px;border-radius:50%;border:5px solid #e9eeee;display:grid;place-items:center;font-size:24px;box-shadow:0 8px 20px #0005}.n1{top:6px;background:#e7444c}.n2{bottom:17px;left:calc(50% - 125px);background:#258bc8}.n3{bottom:17px;right:calc(50% - 125px);background:#687d8c}.gear-copy h2{font-size:clamp(42px,5vw,62px);margin-bottom:17px}.gear-copy p{color:#b1bdc5;font-size:14px;line-height:1.85}.gear-list{margin-top:25px}.gear-item{display:flex;gap:14px;align-items:center;border-top:1px solid var(--line);padding:14px 0}.dot{width:10px;height:10px;border-radius:50%;flex:none}.gear-item strong{font:800 18px 'Barlow Condensed';text-transform:uppercase}.gear-item small{display:block;color:#9aa8b0;font-size:11px;margin-top:3px}
-.steps{background:#e9edef;color:var(--ink)}.steps .lead{color:#56646c}.stepgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}.step{background:#f7f8f7;border-top:4px solid var(--ink);padding:22px}.step-num{font:900 42px 'Barlow Condensed';color:var(--red)}.step h3{font-size:25px;margin:10px 0}.step p{font-size:12px;line-height:1.8;color:#617078}.notice{margin-top:22px;padding:17px 20px;background:#dce5e9;border-left:4px solid var(--blue);font-size:12px;color:#33434c;line-height:1.75}
-.news-card{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;background:white;min-height:250px}.news-art{display:grid;place-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#dce5e7,#aebfc5)}.news-art:before{content:"";position:absolute;width:210px;height:210px;border:2px solid #10182055;border-radius:50%;box-shadow:0 0 0 30px #10182008,0 0 0 65px #10182007}.news-art b{font:900 70px 'Barlow Condensed';color:#101820cc;z-index:1;letter-spacing:.08em}.news-copy{padding:34px}.tag{font-size:9px;color:var(--red);font-weight:900;letter-spacing:.2em}.news-copy h3{font-size:34px;margin:13px 0}.news-copy p{color:#617078;font-size:12px;line-height:1.8}
-.community{text-align:center;background:linear-gradient(120deg,#162633,#101820);position:relative;overflow:hidden}.community:before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:650px;height:650px;border:1px solid #ffffff18;border-radius:50%;box-shadow:0 0 0 50px #ffffff05,0 0 0 110px #ffffff04}.community .wrap{position:relative}.community h2{font-size:clamp(48px,7vw,82px);margin:18px auto;max-width:780px}.community p{color:#b7c2c9;max-width:520px;margin:auto;line-height:1.85;font-size:14px}.community .actions{justify-content:center}
-footer{padding:28px 0;background:#0b1117;border-top:1px solid var(--line);color:#83919a;font-size:10px}.foot{display:flex;justify-content:space-between;align-items:center;gap:20px}.foot strong{font:800 18px 'Barlow Condensed';color:white;letter-spacing:.1em}.foot strong span{color:var(--red)}.disclaimer{max-width:510px;text-align:right;line-height:1.7}
-@media(max-width:800px){nav{display:none;position:absolute;top:74px;left:0;right:0;background:#101820;padding:22px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}nav.open{display:flex}.menu{display:block}.two,.geargrid{grid-template-columns:1fr;gap:35px}.cards{grid-template-columns:repeat(2,1fr)}.stepgrid{grid-template-columns:1fr}.gear{height:320px}.news-card{grid-template-columns:1fr}.news-art{min-height:190px}section{padding:75px 0}}
-@media(max-width:520px){.wrap{width:calc(100% - 32px)}h1{font-size:64px}.hero-inner{padding:75px 0 145px}.stamp{width:105px;height:105px;right:18px;bottom:20px}.stamp strong{font-size:13px}.stamp small{font-size:7px}.cards{grid-template-columns:1fr}.gear .ring{width:245px;height:245px}.core{width:112px;height:112px}.node{width:70px;height:70px}.n2{left:calc(50% - 108px)}.n3{right:calc(50% - 108px)}.foot{align-items:flex-start;flex-direction:column}.disclaimer{text-align:left}}
+/* ---- Tokens: Unova at night. Deep blue and charcoal, C-Gear teal, amber and red accents. */
+:root{
+  --bg:#0d141c; --bg-2:#111b25; --panel:#18232f; --panel-2:#1e2c39; --line:#2d4150; --line-soft:rgba(220,240,250,.12);
+  --text:#edf3f6; --muted:#a8b8c2; --dim:#7b8d98;
+  --teal:#2fc4d8; --teal-deep:#17617b; --amber:#f0b44a; --red:#e84a55; --blue:#3f8fd8; --purple:#a978e8; --green:#46c98a;
+  --head:'Barlow Condensed',Impact,sans-serif; --body:Inter,system-ui,sans-serif;
+  --cut:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{width:min(1160px,calc(100% - 48px));margin:auto}
+h1,h2,h3{font-family:var(--head);text-transform:uppercase;line-height:.94;margin:0}
+section{padding:96px 0;scroll-margin-top:74px}
+.kicker{font-size:10px;color:var(--amber);font-weight:900;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px}
+.title{font-size:clamp(42px,6vw,67px);margin-bottom:17px}
+.lead{color:var(--muted);font-size:15px;line-height:1.8;max-width:600px}
+.eyebrow{color:var(--teal);font-size:10px;font-weight:900;letter-spacing:.23em;text-transform:uppercase;display:flex;align-items:center;gap:12px}
+.eyebrow:before{content:"";width:34px;height:2px;background:var(--teal)}
 
-/* Dark Unova palette — inspired by the games' city lighting and UI, not a monochrome page. */
-:root{--ink:#10151d;--paper:#171f2a;--red:#e84a55;--blue:#25a9c7;--lime:#f2b84b;--line:rgba(225,239,246,.13)}
-body{background:#10151d;color:#edf3f5}
-header{background:rgba(13,19,27,.94)}
-.hero{background:radial-gradient(ellipse at 78% 48%,#17617b55,transparent 38%),linear-gradient(118deg,#111923 0%,#172a39 58%,#102d3b 100%)}
-.hero:before{background-image:linear-gradient(#d9f4ff0a 1px,transparent 1px),linear-gradient(90deg,#d9f4ff0a 1px,transparent 1px)}
-.hero:after{border-color:#6dd6e52a;box-shadow:0 0 0 38px #6dd6e510,0 0 0 90px #6dd6e509,0 0 0 150px #6dd6e506}
-h1 .outline{-webkit-text-stroke:1.5px #d8e9ee}
-.ticker{background:#e8ad43;color:#17202a}
-section{scroll-margin-top:74px}
-#world{background:#121a24}
-.city{background:linear-gradient(145deg,#203d4d,#152c3b);color:#edf5f6;border:1px solid #5b8290;clip-path:none}
-.city-art{background:repeating-linear-gradient(90deg,transparent 0 35px,#d9f6ff0c 36px 38px)}
-.sun{background:#e9a64a;box-shadow:0 0 45px #e9a64a66}
-.tower{background:#1c3442;border-color:#7da9b6}
-.tower:after{background:repeating-linear-gradient(180deg,#4eb4c8 0 5px,transparent 5px 18px)}
-.features,.news{background:#18212c;color:#edf3f5}
-.features .lead,.news .lead{color:#aabac4}
-.cards{background:#0e151e;border-color:#0e151e}
-.card{background:#202c38;color:#edf3f5;border:1px solid #334653}
-.card:hover{background:#263846}
-.ico{background:#173f4b;color:#79d6e3}
-.card:nth-child(2) .ico{background:#492a32;color:#ff9aa1}
-.card:nth-child(3) .ico{background:#193e54;color:#8bd9f2}
-.card p{color:#a9b9c2}
-.cgear{background:#0d151e}
-.steps{background:#141d27;color:#edf3f5}
-.steps .lead{color:#aabac4}
-.step{background:#202c38;border-top-color:#e8ad43;border-left:1px solid #334653;border-right:1px solid #334653;border-bottom:1px solid #334653}
-.step p{color:#aabac4}
-.notice{background:#1c3542;border-left-color:#25a9c7;color:#d3e4e9}
-.news-card{background:#202c38;border:1px solid #344957}
-.news-art{background:linear-gradient(135deg,#1b4a5c,#142b3c)}
-.news-art:before{border-color:#9bdde455;box-shadow:0 0 0 30px #9bdde40a,0 0 0 65px #9bdde407}
-.news-art b{color:#d9edf0}
-.news-copy p{color:#aabac4}
-.community{background:radial-gradient(ellipse at 50% 0%,#16475a 0%,#111b26 58%,#0e151e 100%)}
-.community:before{border-color:#79d5e51b;box-shadow:0 0 0 50px #79d5e508,0 0 0 110px #79d5e505}
-footer{background:#090e14}
-@media(max-width:800px){nav{background:#101923}}
+/* ---- Buttons */
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:16px 21px;font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;clip-path:var(--cut);transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn-red{background:var(--red)}
+.btn-red:hover{background:#f05d67}
+.btn-outline{border:1px solid #ffffff66}
 
+/* ---- DS screenshot frame: a dark bezel with a teal edge, like the C-Gear's rings */
+.screen{position:relative;background:#070b10;border:1px solid var(--line);box-shadow:0 0 0 1px #000,0 18px 50px #0009,0 0 40px #2fc4d812;overflow:hidden}
+.screen img{width:100%;height:auto}
+.screen figcaption{position:absolute;left:12px;bottom:12px;padding:7px 10px;background:#0b1219e6;border-left:3px solid var(--teal);font:700 12px var(--head);letter-spacing:.14em;text-transform:uppercase}
 
-/* Real Black/White game captures and map art */
-.hero{background-image:linear-gradient(90deg,rgba(10,16,24,.96) 0%,rgba(10,16,24,.84) 42%,rgba(10,16,24,.28) 100%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/Castelia_City_Oceanfront_Road_BW.png");background-size:cover;background-position:center 48%}
-.hero:before{background-image:linear-gradient(#d9f4ff08 1px,transparent 1px),linear-gradient(90deg,#d9f4ff08 1px,transparent 1px)}
-.city{height:360px;padding:0;position:relative;background:#101923 url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/Castelia_City_Castelia_Street_BW.png") center 48%/cover no-repeat;border:1px solid #557785;overflow:hidden}
-.city:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,15,22,.88),rgba(8,15,22,.05) 68%)}
-.city-label{position:absolute;z-index:2;top:18px;left:20px;padding:8px 10px;background:#101923d9;color:#d8edf0}
-.city-art{display:none}
-.city-caption{z-index:2;bottom:20px;left:22px;color:#fff;text-shadow:0 2px 10px #000;font-size:34px}
-.cards{gap:12px;background:transparent;border:0}
-.card{position:relative;overflow:hidden;padding:0;min-height:310px;background:#202c38;border:1px solid #344957}
-.card .number{position:absolute;z-index:2;top:14px;left:16px;padding:6px 9px;background:#101923df;color:#d8edf0}
-.card .ico{width:100%;height:160px;margin:0;clip-path:none;background-position:center;background-size:cover;background-repeat:no-repeat;font-size:0}
-.card h3,.card p{margin-left:20px;margin-right:20px}
-.card h3{margin-top:18px}
-.card p{margin-bottom:22px}
-.card:nth-child(1) .ico{background-image:linear-gradient(0deg,#0d1721aa,#0d172100 55%),url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/571.gif")}
-.card:nth-child(2) .ico{background-image:linear-gradient(0deg,#0d1721aa,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/BW_summary_1.png")}
-.card:nth-child(3) .ico{background-image:linear-gradient(0deg,#0d1721aa,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/BW_Wild_Double_Battle.png")}
-.card:nth-child(4) .ico{background-image:linear-gradient(0deg,#0d1721aa,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/Gen_V_Dowsing_Machine.png")}
-.card:nth-child(5) .ico{background-image:linear-gradient(0deg,#0d1721aa,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/BW_Unova_Diploma.png")}
-.card:nth-child(6) .ico{background-image:linear-gradient(0deg,#0d1721aa,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/CGear_Online.png")}
-.gear{background:url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/CGear_Online.png") center/contain no-repeat}
-.gear .ring,.gear .core,.gear .node{display:none}
-.news-art{background:linear-gradient(0deg,#0b1420aa,#0b142033),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/Castelia_City_Map_BW.png") center/contain no-repeat,#172b38}
-.news-art:before{display:none}
-.news-art b{background:#0d1823d9;padding:10px 20px;color:#f3f6f7}
-@media(max-width:800px){.gear{min-height:280px}}
+/* ---- Header */
+.topline{height:5px;background:linear-gradient(90deg,#16181c 0 50%,#f2f2f2 50%)}
+header{position:sticky;top:0;z-index:9;background:rgba(13,20,28,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;font:900 23px var(--head);letter-spacing:.09em}
+.brand img{width:34px;height:34px}
+.brand span{color:var(--teal)}
+nav{display:flex;gap:27px;align-items:center;font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#c5cfd5}
+nav a:hover{color:#fff}
+nav .cta{background:var(--red);padding:13px 18px;clip-path:var(--cut);color:#fff}
+.menu{display:none;background:none;border:0;color:#fff;font-size:25px;cursor:pointer}
 
+/* ---- Hero */
+.hero{position:relative;overflow:hidden;padding:0;background:radial-gradient(ellipse at 78% 45%,#17617b55,transparent 42%),linear-gradient(118deg,#0f1720 0%,#152938 60%,#0f2c3b 100%)}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#d9f4ff09 1px,transparent 1px),linear-gradient(90deg,#d9f4ff09 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(90deg,#000,transparent 70%)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1fr minmax(0,520px);gap:56px;align-items:center;min-height:640px;padding:70px 0 90px}
+h1{font-size:clamp(62px,9vw,112px);margin:25px 0 20px;letter-spacing:.01em}
+h1 .outline{color:transparent;-webkit-text-stroke:1.5px #d8e9ee}
+h1 .red{color:var(--red)}
+.hero p{max-width:520px;color:#c0ccd3;line-height:1.85;font-size:15px}
+.hero .screen{transform:rotate(1.5deg)}
+.hero .screen:after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 2px #2fc4d855;pointer-events:none}
 
-/* Feature cards: authentic Pokémon Black/White and related official artwork */
-.card:nth-child(1) .ico{
- background-image:linear-gradient(0deg,#0d1721b8,#0d172100 65%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/Bianca_and_Cheren_Concept_Art_BW.png");
- background-position:center 38%;
-}
-.card:nth-child(2) .ico{
- background-image:linear-gradient(0deg,#0d1721a8,#0d172100 65%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/CGear_Online.png");
- background-position:center 48%;
-}
-.card:nth-child(3) .ico{
- background-image:linear-gradient(0deg,#0d1721a8,#0d172100 65%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/BW_Wild_Double_Battle.png");
- background-position:center 45%;
-}
-.card:nth-child(4) .ico{
- background-image:linear-gradient(0deg,#0d1721a8,#0d172100 65%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/Looker_anime.png");
- background-position:center 34%;
-}
-.card:nth-child(5) .ico{
- background-image:linear-gradient(0deg,#0d1721a8,#0d172100 65%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/Black_White_Hilda.png");
- background-position:center 28%;
-}
-.card:nth-child(6) .ico{
- background-image:linear-gradient(0deg,#0d1721a8,#0d172100 65%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/BW_Xtransceiver.png");
- background-position:center 42%;
-}
+.ticker{padding:13px 0;background:var(--amber);color:#17202a;font:900 13px var(--head);letter-spacing:.17em;white-space:nowrap;overflow:hidden}
+.ticker b{color:var(--red);padding:0 22px;font-size:18px}
 
+/* ---- The world */
+#world{background:var(--bg-2)}
+.two{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.facts{margin:26px 0 0;padding:0;list-style:none}
+.facts li{display:flex;gap:14px;align-items:baseline;border-top:1px solid var(--line-soft);padding:13px 0;color:var(--muted);font-size:14px;line-height:1.6}
+.facts strong{font:800 18px var(--head);text-transform:uppercase;color:var(--text);min-width:92px;letter-spacing:.04em}
 
-/* Social card uses released Black/White character artwork only — no concept art */
-.card:nth-child(1) .ico{
- background-image:
-  linear-gradient(0deg,#0d1721b8,#0d172100 65%),
-  url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/Black_White_Bianca.png"),
-  url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/Black_White_Cheren.png"),
-  url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/Black_White_Hilda.png");
- background-size:cover,32% 94%,32% 94%,32% 94%;
- background-position:center,left bottom,center bottom,right bottom;
- background-repeat:no-repeat;
-}
+/* ---- Feature cards */
+.features{background:#141e29}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:44px}
+.card{position:relative;display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);overflow:hidden;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:#3f6274}
+.card .art{position:relative;aspect-ratio:520/192;background:#070b10;border-bottom:3px solid var(--accent,var(--teal))}
+.card .art img{width:100%;height:100%;object-fit:cover}
+.card .number{position:absolute;z-index:1;top:10px;left:10px;padding:6px 9px;background:#0b1219e6;font:800 12px var(--head);letter-spacing:.15em;color:#d8edf0}
+.card .body{padding:20px 22px 24px}
+.card h3{font-size:28px;margin-bottom:10px}
+.card p{font-size:13px;color:var(--muted);line-height:1.75;margin:0}
+.card.social{--accent:var(--blue)}.card.trade{--accent:var(--green)}.card.battle{--accent:var(--purple)}
+.card.missions{--accent:var(--amber)}.card.looks{--accent:var(--red)}.card.connect{--accent:var(--teal)}
 
+/* ---- C-Gear */
+.cgear{background:var(--bg);overflow:hidden}
+.geargrid{display:grid;grid-template-columns:minmax(0,440px) 1fr;gap:65px;align-items:center}
+.cgear .screen{border-radius:6px}
+.gear-copy h2{font-size:clamp(42px,5vw,62px);margin-bottom:17px}
+.gear-copy p{color:var(--muted);font-size:15px;line-height:1.8}
+.gear-list{margin-top:25px}
+.gear-item{display:flex;gap:14px;align-items:center;border-top:1px solid var(--line-soft);padding:14px 0}
+.dot{width:12px;height:12px;border-radius:50%;flex:none;box-shadow:0 0 12px currentColor}
+.gear-item strong{font:800 19px var(--head);text-transform:uppercase}
+.gear-item small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
 
-/* Final feature artwork pass: one known, named image per card; no stacked/placeholder backgrounds. */
-.card .ico{
-  display:block;
-  width:100%;
-  height:160px;
-  margin:0;
-  clip-path:none;
-  font-size:0;
-  background-color:#142b38;
-  background-repeat:no-repeat;
-  background-position:center;
-  background-size:cover;
-}
-.card:nth-child(1) .ico{
-  background-image:linear-gradient(0deg,#0d17213d,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/BW%20PS%20Bianca%20Cheren.png");
-  background-position:center 38%;
-}
-.card:nth-child(2) .ico{
-  background-image:linear-gradient(0deg,#0d17213d,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/Bianca%20and%20friends.png");
-  background-position:center 40%;
-}
-.card:nth-child(3) .ico{
-  background-image:linear-gradient(0deg,#0d17213d,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/BW%20Wild%20Double%20Battle.png");
-  background-position:center 50%;
-}
-.card:nth-child(4) .ico{
-  background-image:linear-gradient(0deg,#0d17213d,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/Looker%20BW%20anime.png");
-  background-position:center 40%;
-}
-.card:nth-child(5) .ico{
-  background-image:linear-gradient(0deg,#0d17213d,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/Cheren%20and%20Serperior%20PBW.png");
-  background-position:center 38%;
-}
-.card:nth-child(6) .ico{
-  background-image:linear-gradient(0deg,#0d17213d,#0d172100 55%),url("https://archives.bulbagarden.net/wiki/Special:Redirect/file/BW%20PGL%20artwork.png");
-  background-position:center 42%;
-}
+/* ---- Getting started */
+.steps{background:#121b25}
+.stepgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.step{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--amber);padding:22px}
+.step-num{font:900 42px var(--head);color:var(--red)}
+.step h3{font-size:26px;margin:10px 0}
+.step p{font-size:13px;line-height:1.75;color:var(--muted);margin:0}
+.notice{margin-top:22px;padding:17px 20px;background:#16303d;border-left:4px solid var(--teal);font-size:13px;color:#d3e4e9;line-height:1.75}
 
-</style></head>
-<body><div class="topline"></div><header><div class="wrap nav"><a class="brand" href="#top"><span class="mark"></span>CASTELIA <span style="color:var(--red)">ONLINE</span></a><button class="menu" id="menu">☰</button><nav id="nav"><a href="#world">The world</a><a href="#features">Features</a><a href="#cgear">C-Gear</a><a href="#start">Getting started</a><a class="cta" href="#community">Join the community ↗</a></nav></div></header>
-<main id="top"><section class="hero"><div class="wrap"><div class="hero-inner"><div class="eyebrow">A fan-made Unova online experience</div><h1>BACK TO<br><span class="outline">UNOVA.</span><br><span class="red">ONLINE.</span></h1><p>Meet up with other trainers, trade Pokémon, and battle across Unova. Castelia is a good place to start.</p><div class="actions"><a class="btn btn-red" href="#start">Explore the playtest ↗</a><a class="btn btn-outline" href="#features">Discover what's inside ＋</a></div></div></div><div class="stamp"><div><strong>WELCOME<br>TO UNOVA</strong><small>EST. IN THE CITY</small></div></div></section>
-<div class="ticker">CASTELIA CITY <b>✦</b> TRAINERS WANTED <b>✦</b> YOUR JOURNEY CONTINUES <b>✦</b> CASTELIA CITY <b>✦</b> TRAINERS WANTED <b>✦</b> YOUR JOURNEY CONTINUES <b>✦</b></div>
-<section id="world"><div class="wrap two"><div><div class="kicker">01 / A region brought together</div><h2 class="title">Unova, with<br>other trainers in it.</h2><p class="lead">Castelia Online is a fan project built around Pokémon Black and White. The idea is simple: bring the region online so you can run into other players, trade, and battle.</p></div><div class="city"><div class="city-label">UNOVA REGION / METROPOLITAN DISTRICT</div><div class="city-art"><div class="sun"></div><i class="tower t1"></i><i class="tower t2"></i><i class="tower t3"></i><i class="tower t4"></i></div><div class="city-caption">CASTELIA CITY</div></div></div></section>
-<section class="features" id="features"><div class="wrap"><div class="kicker">02 / Make your mark</div><h2 class="title">More than a journey.</h2><p class="lead">The main things you'll be able to do in one place:</p><div class="cards">
-<article class="card"><div class="number">01 — SOCIAL</div><div class="ico">◉</div><h3>Find your people</h3><p>See other trainers in the world and interact directly. Start a conversation, ask for a trade, or challenge someone nearby.</p></article>
-<article class="card"><div class="number">02 — TRADING</div><div class="ico">⇄</div><h3>Trade & discover</h3><p>Explore the trading hub, browse listings, and keep track of your trading activity.</p></article>
-<article class="card"><div class="number">03 — BATTLES</div><div class="ico">⚔</div><h3>Battle your way</h3><p>Find a match, challenge friends, or test yourself in ranked battles and climb the leaderboards.</p></article>
-<article class="card"><div class="number">04 — MISSIONS</div><div class="ico">✧</div><h3>Take on missions</h3><p>Give your time in Unova another purpose with community missions and goals.</p></article>
-<article class="card"><div class="number">05 — COLLECTION</div><div class="ico">◇</div><h3>Make it yours</h3><p>Show off your trainer identity and build a collection that feels like your own.</p></article>
-<article class="card"><div class="number">06 — COMMUNITY</div><div class="ico">⌂</div><h3>Stay connected</h3><p>Keep up with project news, community activity, and the latest playtest updates.</p></article></div></div></section>
-<section class="cgear" id="cgear"><div class="wrap geargrid"><div class="gear"><div class="ring"></div><div class="core"></div><div class="node n1">◉</div><div class="node n2">⇄</div><div class="node n3">⚔</div></div><div class="gear-copy"><div class="kicker">03 / Your online hub</div><h2>The C-Gear<br>gets a new job.</h2><p>The three circles on the C-Gear are the shortcuts: social, trading, and battles. No digging through menus to find the online features.</p><div class="gear-list"><div class="gear-item"><i class="dot" style="background:#e7444c"></i><div><strong>Social</strong><small>Find trainers and interact with players nearby.</small></div></div><div class="gear-item"><i class="dot" style="background:#258bc8"></i><div><strong>Trade</strong><small>Open the GTS, browse the market, and manage trades.</small></div></div><div class="gear-item"><i class="dot" style="background:#8799a5"></i><div><strong>Battle</strong><small>Queue for ranked matches or set up a friendly battle.</small></div></div></div></div></div></section>
-<section class="steps" id="start"><div class="wrap"><div class="kicker">04 / Ready, trainer?</div><h2 class="title">Getting into<br>the playtest.</h2><p class="lead">The playtest runs on Windows. You'll need your own copy of Pokémon Black or White.</p><div class="stepgrid"><article class="step"><div class="step-num">01</div><h3>Prepare your game</h3><p>Have your own US or Europe Pokémon Black or Pokémon White Nintendo DS ROM dump ready. The game itself is not included.</p></article><article class="step"><div class="step-num">02</div><h3>Launch the client</h3><p>Download and open the Castelia Online client on a Windows 10 or Windows 11 64-bit PC. Select your game and set up your trainer.</p></article><article class="step"><div class="step-num">03</div><h3>Connect to Unova</h3><p>Connect to the playtest server and step into the world. Your online save is managed by the server while connected.</p></article></div><div class="notice"><strong>Playtest note:</strong> This is an early community build. Online play uses a server-authoritative save, and features may change as development continues. Cheats and save states are blocked while online. Client downloads and detailed setup instructions will be linked here when the public release page is ready.</div></div></section>
-<section class="news"><div class="wrap"><div class="kicker">05 / From the region</div><h2 class="title">Field notes.</h2><p class="lead">Updates and notes from development will show up here.</p><div class="news-card"><div class="news-art"><b>UNOVA</b></div><div class="news-copy"><div class="tag">PROJECT UPDATE / PLAYTEST</div><h3>Work in progress.</h3><p>I'm still working on the project. This section will have playtest news, changes, and release details as they're ready.</p></div></div></div></section>
-<section class="community" id="community"><div class="wrap"><div class="eyebrow" style="justify-content:center">Come hang out in Unova</div><h2>THE CITY IS BETTER<br>WHEN WE'RE <span style="color:var(--red)">TOGETHER.</span></h2><p>Follow along with development and meet the people playing.</p><div class="actions"><a class="btn btn-red" href="mailto:hello@nibi.rest?subject=Castelia%20Online">Get in touch ↗</a><a class="btn btn-outline" href="#top">Back to top ↑</a></div></div></section></main>
-<footer><div class="wrap foot"><strong>CASTELIA <span>ONLINE</span></strong><div class="disclaimer">A fan-made project inspired by Pokémon Black and White. Not affiliated with or endorsed by Nintendo, The Pokémon Company, or Game Freak. Pokémon and related trademarks belong to their respective owners.</div></div></footer>
-<script>const menu=document.getElementById('menu'),nav=document.getElementById('nav');menu.addEventListener('click',()=>nav.classList.toggle('open'));nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));</script></body></html>
+/* ---- Field notes */
+.news{background:#141e29}
+.newsgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:40px}
+.note{display:grid;grid-template-columns:150px 1fr;background:var(--panel);border:1px solid var(--line)}
+.note .badge{display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,#17617b,#0f1c27 70%);border-right:1px solid var(--line)}
+.note .badge img{width:96px;height:96px}
+.note-copy{padding:24px}
+.tag{font-size:10px;color:var(--amber);font-weight:900;letter-spacing:.2em}
+.note-copy h3{font-size:28px;margin:11px 0}
+.note-copy p{color:var(--muted);font-size:13px;line-height:1.75;margin:0}
+
+/* ---- Community */
+.community{text-align:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 0%,#16475a 0%,#101a24 58%,#0d141c 100%)}
+.community:before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:650px;height:650px;border:1px solid #79d5e51b;border-radius:50%;box-shadow:0 0 0 50px #79d5e508,0 0 0 110px #79d5e505}
+.community .wrap{position:relative}
+.community h2{font-size:clamp(46px,7vw,82px);margin:18px auto;max-width:800px}
+.community p{color:var(--muted);max-width:520px;margin:auto;line-height:1.85;font-size:15px}
+.community .actions,.community .eyebrow{justify-content:center}
+
+/* ---- Footer */
+footer{padding:28px 0;background:#090e14;border-top:1px solid var(--line-soft);color:#83919a;font-size:11px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.foot strong{font:800 18px var(--head);color:#fff;letter-spacing:.1em}
+.foot strong span{color:var(--teal)}
+.disclaimer{max-width:560px;text-align:right;line-height:1.7}
+
+/* ---- Small screens */
+@media(max-width:900px){
+  nav{display:none;position:absolute;top:74px;left:0;right:0;background:#0f1922;padding:22px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line-soft)}
+  nav.open{display:flex}
+  .menu{display:block}
+  .hero-grid,.two,.geargrid{grid-template-columns:1fr;gap:38px}
+  .hero-grid{min-height:0;padding:60px 0 70px}
+  .hero .screen{transform:none;max-width:520px}
+  .cgear .screen{max-width:440px}
+  .stepgrid,.newsgrid{grid-template-columns:1fr}
+  section{padding:72px 0}
+}
+@media(max-width:560px){
+  .wrap{width:calc(100% - 32px)}
+  h1{font-size:60px}
+  .cards{grid-template-columns:1fr}
+  .note{grid-template-columns:1fr}
+  .note .badge{padding:18px;border-right:0;border-bottom:1px solid var(--line)}
+  .facts li{flex-direction:column;gap:2px}
+  .foot{align-items:flex-start;flex-direction:column}
+  .disclaimer{text-align:left}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.card{transition:none}}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><img src="images/unova-online-logo.png" alt="" width="34" height="34">UNOVA <span>ONLINE</span></a>
+    <button class="menu" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav id="nav">
+      <a href="#world">The world</a>
+      <a href="#features">Features</a>
+      <a href="#cgear">C-Gear</a>
+      <a href="#start">Getting started</a>
+      <a class="cta" href="#community">Join the community ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Pokémon Black and White, online</div>
+      <h1>Back to<br><span class="outline">Unova.</span><br><span class="red">Online.</span></h1>
+      <p>Walk Unova with other trainers in it. See everyone around you, chat from the C-Gear, trade, battle, and work through missions together, in the games you already love.</p>
+      <div class="actions">
+        <a class="btn btn-red" href="#start">Join the playtest ↗</a>
+        <a class="btn btn-outline" href="#features">See what's inside ＋</a>
+      </div>
+    </div>
+    <figure class="screen" style="margin:0">
+      <img src="images/accumula-trainers.png" width="768" height="576" alt="A crowd of twelve trainers in Accumula Town, each with their name shown above them">
+      <figcaption>Accumula Town · 12 trainers online</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">BLACK AND WHITE TOGETHER <b>✦</b> TRAINERS WANTED <b>✦</b> YOUR JOURNEY CONTINUES <b>✦</b> BLACK AND WHITE TOGETHER <b>✦</b> TRAINERS WANTED <b>✦</b> YOUR JOURNEY CONTINUES <b>✦</b></div>
+
+<section id="world">
+  <div class="wrap two">
+    <div>
+      <div class="kicker">01 / A region brought together</div>
+      <h2 class="title">Unova, with other trainers in it.</h2>
+      <p class="lead">Unova Online runs inside Pokémon Black and White. Other players walk the same routes and towns as you, with their names above their heads.</p>
+      <ul class="facts">
+        <li><strong>Together</strong>Black and White players share one world.</li>
+        <li><strong>Copies</strong>Unova is split into copies of up to 20 trainers each. Switch any time from the C-Gear.</li>
+        <li><strong>Fresh start</strong>Every new account begins a brand-new adventure.</li>
+      </ul>
+    </div>
+    <figure class="screen" style="margin:0">
+      <img src="images/instances.png" width="1200" height="576" alt="Three Nintendo DS screenshots: other trainers in Accumula Town, the C-Gear Online page, and the list of Unova copies to switch between" loading="lazy">
+      <figcaption>Switching copies of Unova from the C-Gear</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="wrap">
+    <div class="kicker">02 / Make your mark</div>
+    <h2 class="title">More than a journey.</h2>
+    <p class="lead">Everything happens in the game itself. These are real screenshots from the playtest.</p>
+    <div class="cards">
+      <article class="card social">
+        <div class="art"><span class="number">01 — Social</span><img src="images/social.png" width="1560" height="576" alt="Trainers with name tags in town, and the C-Gear chat with messages from other players" loading="lazy"></div>
+        <div class="body"><h3>Find your people</h3><p>See other trainers as you explore. Chat with everyone online from the C-Gear, or walk up and talk to a player to trade or battle.</p></div>
+      </article>
+      <article class="card trade">
+        <div class="art"><span class="number">02 — Trading</span><img src="images/trading.png" width="1560" height="576" alt="The Global Trade System room and its menu" loading="lazy"></div>
+        <div class="body"><h3>Trade and discover</h3><p>The game's own GTS works again, on our server. Trade face to face, and swap items on the C-Gear Items board.</p></div>
+      </article>
+      <article class="card battle">
+        <div class="art"><span class="number">03 — Battles</span><img src="images/battles.png" width="1560" height="576" alt="The talk-to-player menu offering Battle or Trade, and a link battle in progress" loading="lazy"></div>
+        <div class="body"><h3>Battle together</h3><p>Talk to any trainer you meet and pick Battle. Single, Double, Triple and Rotation link battles start right from the overworld.</p></div>
+      </article>
+      <article class="card missions">
+        <div class="art"><span class="number">04 — Missions</span><img src="images/missions.png" width="1560" height="576" alt="The C-Gear Missions page with daily missions and their Castelia Coin rewards" loading="lazy"></div>
+        <div class="body"><h3>Take on missions</h3><p>New daily and weekly missions: catch, hatch, evolve, explore. Rarer Pokémon pay more Castelia Coins.</p></div>
+      </article>
+      <article class="card looks">
+        <div class="art"><span class="number">05 — Looks</span><img src="images/trainer-looks.png" width="1560" height="576" alt="The C-Gear Looks shop listing trainer looks to unlock with Castelia Coins" loading="lazy"></div>
+        <div class="body"><h3>Make it yours</h3><p>Spend coins on 45 looks, from Cheren and the Gym Leaders to Looker and Plasma Grunts. Everyone sees the look you wear.</p></div>
+      </article>
+      <article class="card connect">
+        <div class="art"><span class="number">06 — Community</span><img src="images/shiny-announcement.png" width="1560" height="576" alt="A shiny Golbat in a wild battle, and the C-Gear announcing that a player caught a shiny Golbat" loading="lazy"></div>
+        <div class="body"><h3>Stay connected</h3><p>Shiny catches are announced to everyone. News, events and Mystery Gifts arrive through the C-Gear and the game's own Mystery Gift.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cgear" id="cgear">
+  <div class="wrap geargrid">
+    <figure class="screen" style="margin:0">
+      <img src="images/cgear-home.png" width="768" height="576" alt="The Unova Online C-Gear home screen with Social, Battle and Trade buttons, Missions, Online status and chat" loading="lazy">
+    </figure>
+    <div class="gear-copy">
+      <div class="kicker">03 / Your online hub</div>
+      <h2>The C-Gear gets a new job.</h2>
+      <p>The touch screen is home base. Its three circles are your shortcuts, and the latest chat and news sit right underneath.</p>
+      <div class="gear-list">
+        <div class="gear-item"><i class="dot" style="color:var(--blue);background:var(--blue)"></i><div><strong>Social</strong><small>Chat, friends, and the copies of Unova to switch between.</small></div></div>
+        <div class="gear-item"><i class="dot" style="color:var(--purple);background:var(--purple)"></i><div><strong>Battle</strong><small>Challenge trainers online and set up link battles.</small></div></div>
+        <div class="gear-item"><i class="dot" style="color:var(--green);background:var(--green)"></i><div><strong>Trade</strong><small>The GTS, the Items board and the Looks shop.</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="start">
+  <div class="wrap">
+    <div class="kicker">04 / Ready, trainer?</div>
+    <h2 class="title">Getting into the playtest.</h2>
+    <p class="lead">The playtest runs on Windows. You need your own copy of Pokémon Black or White.</p>
+    <div class="stepgrid">
+      <article class="step"><div class="step-num">01</div><h3>Prepare your game</h3><p>Have your own Pokémon Black or Pokémon White (US) game ready. The game itself is not included.</p></article>
+      <article class="step"><div class="step-num">02</div><h3>Open the client</h3><p>Unzip the Unova Online playtest on a 64-bit Windows 10 or 11 PC, start it, and pick your game.</p></article>
+      <article class="step"><div class="step-num">03</div><h3>Step into Unova</h3><p>Choose a trainer name and connect. Your adventure starts fresh, and the server keeps your save safe.</p></article>
+    </div>
+    <div class="notice"><strong>Playtest note:</strong> This is an early build and things will change. The game only runs while connected, and cheats and save states are turned off. The download link goes here when the playtest opens.</div>
+  </div>
+</section>
+
+<section class="news">
+  <div class="wrap">
+    <div class="kicker">05 / From the region</div>
+    <h2 class="title">Field notes.</h2>
+    <p class="lead">What's new in development.</p>
+    <div class="newsgrid">
+      <article class="note">
+        <div class="badge"><img src="images/unova-online-logo.png" width="96" height="96" alt=""></div>
+        <div class="note-copy"><div class="tag">UPDATE / NOVEMBER 2026</div><h3>Shinies and Exp. Share</h3><p>Every shiny caught or hatched is announced in chat, and staff can raise shiny odds for events. Exp. Share can now cover the whole party.</p></div>
+      </article>
+      <article class="note">
+        <div class="badge"><img src="images/unova-online-logo.png" width="96" height="96" alt=""></div>
+        <div class="note-copy"><div class="tag">PLAYTEST / NOVEMBER 2026</div><h3>Playtest v1 is built</h3><p>The first playtest build is ready: one download, your own game, and everyone starts a new adventure together.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="community" id="community">
+  <div class="wrap">
+    <div class="eyebrow">Come hang out in Unova</div>
+    <h2>Unova is better<br>when we're <span style="color:var(--red)">together.</span></h2>
+    <p>Follow along with development, and be there when the playtest opens.</p>
+    <div class="actions">
+      <a class="btn btn-red" href="mailto:hello@nibi.rest?subject=Unova%20Online">Get in touch ↗</a>
+      <a class="btn btn-outline" href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <strong>UNOVA <span>ONLINE</span></strong>
+    <div class="disclaimer">A fan-made project for Pokémon Black and White. Screenshots are from Unova Online running the original games. Not affiliated with or endorsed by Nintendo, The Pokémon Company, Creatures or GAME FREAK. Pokémon and related names are trademarks of their respective owners.</div>
+  </div>
+</footer>
+<script>
+const menu=document.getElementById('menu'),nav=document.getElementById('nav');
+menu.addEventListener('click',()=>{const o=nav.classList.toggle('open');menu.setAttribute('aria-expanded',o)});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
+</script>
+</body>
+</html>

@@ -1,8 +1,8 @@
-{
-  "name": "castelia-online",
+﻿{
+  "name": "unova-online",
   "version": "1.0.0",
   "private": true,
-  "description": "Castelia Online community website",
+  "description": "Unova Online website",
   "scripts": {
     "start": "node server.js"
   },

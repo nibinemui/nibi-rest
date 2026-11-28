@@ -1,4 +1,4 @@
-const http = require("node:http");
+﻿const http = require("node:http");
 const fs = require("node:fs");
 const path = require("node:path");
 
@@ -10,7 +10,8 @@ const types = {
   ".svg": "image/svg+xml",
   ".png": "image/png",
   ".jpg": "image/jpeg",
-  ".webp": "image/webp"
+  ".webp": "image/webp",
+  ".ico": "image/x-icon"
 };
 
 http.createServer((req, res) => {
@@ -36,5 +37,5 @@ http.createServer((req, res) => {
     res.end(data);
   });
 }).listen(Number(process.env.PORT || 3000), "0.0.0.0", () => {
-  console.log("Castelia Online ready");
+  console.log("Unova Online website ready");
 });
